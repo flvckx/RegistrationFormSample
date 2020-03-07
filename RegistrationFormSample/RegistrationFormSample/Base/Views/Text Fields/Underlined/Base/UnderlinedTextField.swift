@@ -6,6 +6,7 @@
 //  Copyright © 2020 Serhii Palash. All rights reserved.
 //
 
+import SwiftPhoneNumberFormatter
 import UIKit
 
 class UnderlinedTextField: UIView {
@@ -34,6 +35,8 @@ class UnderlinedTextField: UIView {
         }
     }
     
+    var content: TextFieldContent?
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadNib()
@@ -48,5 +51,23 @@ class UnderlinedTextField: UIView {
         addSubview(contentView)
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension UnderlinedTextField: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        switch content {
+        case .name, .surname:
+            let allowedCharacters = CharacterSet.letters
+            let characters = CharacterSet(charactersIn: string)
+            return allowedCharacters.isSuperset(of: characters)
+        default:
+            return true
+        }
     }
 }

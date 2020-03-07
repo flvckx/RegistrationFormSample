@@ -4,11 +4,13 @@ PODS:
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
   - SwiftLint (0.38.0)
+  - SwiftPhoneNumberFormatter (1.5)
 
 DEPENDENCIES:
   - Alamofire
   - R.swift
   - SwiftLint
+  - SwiftPhoneNumberFormatter
 
 SPEC REPOS:
   trunk:
@@ -16,13 +18,15 @@ SPEC REPOS:
     - R.swift
     - R.swift.Library
     - SwiftLint
+    - SwiftPhoneNumberFormatter
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   SwiftLint: 4105f061f9812b214568b736dab580ab2c73a582
+  SwiftPhoneNumberFormatter: 0cc91f4daa06dd606a9defb21048a75c36a771a2
 
-PODFILE CHECKSUM: 8f299f6dc8f1a575beb71d81ca6be1d11e02390b
+PODFILE CHECKSUM: 69f14625683ba78acee8cdc9f3f670d8a8557d07
 
 COCOAPODS: 1.8.4

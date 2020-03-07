@@ -36,7 +36,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Z4p-bk-LCp"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Je9-YR-GnU" customClass="UnderlinedTextField" customModule="RegistrationFormSample" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Je9-YR-GnU" customClass="PhoneTextField" customModule="RegistrationFormSample" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="150" width="414" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -97,7 +97,7 @@
                         <outlet property="emailTextFieldView" destination="U1N-bJ-dI8" id="Rul-74-A2Q"/>
                         <outlet property="nameTextFieldView" destination="brz-Ld-xyE" id="Cm5-pY-urP"/>
                         <outlet property="passwordTextField" destination="mH3-B1-Ix2" id="Max-I4-fh8"/>
-                        <outlet property="phoneTextFieldView" destination="Je9-YR-GnU" id="j6x-8B-5XB"/>
+                        <outlet property="phoneTextFieldView" destination="Je9-YR-GnU" id="qmi-Ol-MlL"/>
                         <outlet property="selectionView" destination="qDJ-uJ-Eo8" id="R4P-2E-SY7"/>
                         <outlet property="surnameTextFieldView" destination="QeH-qZ-7bv" id="pa7-K2-mBu"/>
                     </connections>

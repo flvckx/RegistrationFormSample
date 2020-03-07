@@ -39,6 +39,10 @@
 		C67A41B72414098500A40FA6 /* SelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C67A41B62414098500A40FA6 /* SelectionView.xib */; };
 		C67A41B924140A6200A40FA6 /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41B824140A6200A40FA6 /* SelectionView.swift */; };
 		C67A41BC24142F6800A40FA6 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41BB24142F6800A40FA6 /* City.swift */; };
+		C67A41C12414374200A40FA6 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41C02414374200A40FA6 /* Validator.swift */; };
+		C67A41C324143A2900A40FA6 /* TextFieldContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41C224143A2900A40FA6 /* TextFieldContent.swift */; };
+		C67A41CC24144A4200A40FA6 /* PhoneTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = C67A41CB24144A4200A40FA6 /* PhoneTextField.xib */; };
+		C67A41CE24144A6D00A40FA6 /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41CD24144A6D00A40FA6 /* PhoneTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +82,10 @@
 		C67A41B62414098500A40FA6 /* SelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionView.xib; sourceTree = "<group>"; };
 		C67A41B824140A6200A40FA6 /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
 		C67A41BB24142F6800A40FA6 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		C67A41C02414374200A40FA6 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		C67A41C224143A2900A40FA6 /* TextFieldContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldContent.swift; sourceTree = "<group>"; };
+		C67A41CB24144A4200A40FA6 /* PhoneTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTextField.xib; sourceTree = "<group>"; };
+		C67A41CD24144A6D00A40FA6 /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
 		DC1B21AA0E959B89369DF7D9 /* Pods-RegistrationFormSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegistrationFormSample.release.xcconfig"; path = "Target Support Files/Pods-RegistrationFormSample/Pods-RegistrationFormSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +139,7 @@
 		C67A4157241393EC00A40FA6 /* RegistrationFormSample */ = {
 			isa = PBXGroup;
 			children = (
+				C67A41BF2414373600A40FA6 /* Core */,
 				C67A416F241395C500A40FA6 /* Protocols */,
 				C67A416C2413959500A40FA6 /* Factories */,
 				C67A4158241393EC00A40FA6 /* AppDelegate.swift */,
@@ -261,6 +270,7 @@
 		C67A41962413D2AD00A40FA6 /* Text Fields */ = {
 			isa = PBXGroup;
 			children = (
+				C67A41C924144A1C00A40FA6 /* Phone */,
 				C67A41AE2414008700A40FA6 /* Underlined */,
 			);
 			path = "Text Fields";
@@ -315,8 +325,26 @@
 			isa = PBXGroup;
 			children = (
 				C67A41BB24142F6800A40FA6 /* City.swift */,
+				C67A41C224143A2900A40FA6 /* TextFieldContent.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C67A41BF2414373600A40FA6 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C67A41C02414374200A40FA6 /* Validator.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C67A41C924144A1C00A40FA6 /* Phone */ = {
+			isa = PBXGroup;
+			children = (
+				C67A41CB24144A4200A40FA6 /* PhoneTextField.xib */,
+				C67A41CD24144A6D00A40FA6 /* PhoneTextField.swift */,
+			);
+			path = Phone;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,6 +415,7 @@
 				C67A419B2413D51000A40FA6 /* Colors.xcassets in Resources */,
 				C67A41B72414098500A40FA6 /* SelectionView.xib in Resources */,
 				C67A41AD2413E34600A40FA6 /* Onboarding.storyboard in Resources */,
+				C67A41CC24144A4200A40FA6 /* PhoneTextField.xib in Resources */,
 				C67A41B22414014600A40FA6 /* SecureTextField.xib in Resources */,
 				C67A4165241393ED00A40FA6 /* LaunchScreen.storyboard in Resources */,
 				C67A4162241393ED00A40FA6 /* Images.xcassets in Resources */,
@@ -489,6 +518,7 @@
 				C67A41A92413E1CB00A40FA6 /* SignUpSceneFactory.swift in Sources */,
 				C67A418E2413A40600A40FA6 /* Services.swift in Sources */,
 				C67A41712413973B00A40FA6 /* ICoordinatorFactory.swift in Sources */,
+				C67A41C324143A2900A40FA6 /* TextFieldContent.swift in Sources */,
 				C67A418524139E1900A40FA6 /* CitiesNetworkService.swift in Sources */,
 				C67A418A24139FB900A40FA6 /* Router.swift in Sources */,
 				C67A417A24139B9D00A40FA6 /* OnboardingCoordinatorFactory.swift in Sources */,
@@ -496,6 +526,8 @@
 				C67A4159241393EC00A40FA6 /* AppDelegate.swift in Sources */,
 				C67A418224139CBF00A40FA6 /* OnboardingCoordinator.swift in Sources */,
 				C67A417724139AC700A40FA6 /* IAppServices.swift in Sources */,
+				C67A41C12414374200A40FA6 /* Validator.swift in Sources */,
+				C67A41CE24144A6D00A40FA6 /* PhoneTextField.swift in Sources */,
 				C67A41A72413DE7A00A40FA6 /* OnboardingViewModel.swift in Sources */,
 				C67A41752413992200A40FA6 /* Presentable.swift in Sources */,
 				C67A417C24139BD500A40FA6 /* Coordinatable.swift in Sources */,

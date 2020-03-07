@@ -166,14 +166,24 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
+    /// Nib `PhoneTextField`.
+    static let phoneTextField = _R.nib._PhoneTextField()
     /// Nib `SecureTextField`.
     static let secureTextField = _R.nib._SecureTextField()
     /// Nib `SelectionView`.
     static let selectionView = _R.nib._SelectionView()
     /// Nib `UnderlinedTextField`.
     static let underlinedTextField = _R.nib._UnderlinedTextField()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PhoneTextField", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.phoneTextField) instead")
+    static func phoneTextField(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.phoneTextField)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "SecureTextField", in: bundle)`
@@ -198,6 +208,10 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.underlinedTextField)
     }
     #endif
+
+    static func phoneTextField(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.phoneTextField.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
 
     static func secureTextField(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.secureTextField.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
@@ -456,6 +470,17 @@ struct _R: Rswift.Validatable {
 
   #if os(iOS) || os(tvOS)
   struct nib {
+    struct _PhoneTextField: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "PhoneTextField"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
     struct _SecureTextField: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "SecureTextField"

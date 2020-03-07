@@ -4,6 +4,7 @@ def utility_pods
   pod 'Alamofire'
   pod 'R.swift'
   pod 'SwiftLint'
+  pod "SwiftPhoneNumberFormatter"
 end
 
 target 'RegistrationFormSample' do

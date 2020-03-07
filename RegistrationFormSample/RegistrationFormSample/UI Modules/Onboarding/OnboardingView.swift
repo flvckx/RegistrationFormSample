@@ -13,7 +13,7 @@ final class OnboardingView: UIViewController {
     @IBOutlet private var nameTextFieldView: UnderlinedTextField!
     @IBOutlet private var surnameTextFieldView: UnderlinedTextField!
     @IBOutlet private var emailTextFieldView: UnderlinedTextField!
-    @IBOutlet private var phoneTextFieldView: UnderlinedTextField!
+    @IBOutlet private var phoneTextFieldView: PhoneTextField!
     @IBOutlet private var selectionView: SelectionView!
     @IBOutlet private var passwordTextField: SecureTextField!
     @IBOutlet private var confirmPasswordTextField: SecureTextField!
@@ -63,10 +63,17 @@ private extension OnboardingView {
         navigationController?.navigationBar.clipsToBounds = true
         navigationController?.navigationBar.layer.maskedCorners = [.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
         
+        nameTextFieldView.content = .name
         nameTextFieldView.placeholder = R.string.localizible.enterName()
+        
+        surnameTextFieldView.content = .surname
         surnameTextFieldView.placeholder = R.string.localizible.enterSurname()
+        
+        emailTextFieldView.content = .email
         emailTextFieldView.placeholder = R.string.localizible.email()
+        
         phoneTextFieldView.placeholder = R.string.localizible.phone()
+        
         passwordTextField.placeholder = R.string.localizible.createPassword()
         confirmPasswordTextField.placeholder = R.string.localizible.repeatPassword()
         
