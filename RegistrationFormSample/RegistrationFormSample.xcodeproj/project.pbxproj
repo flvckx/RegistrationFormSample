@@ -19,7 +19,7 @@
 		C67A417C24139BD500A40FA6 /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A417B24139BD500A40FA6 /* Coordinatable.swift */; };
 		C67A417E24139C0700A40FA6 /* CoordinatorFinishable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A417D24139C0700A40FA6 /* CoordinatorFinishable.swift */; };
 		C67A418224139CBF00A40FA6 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A418124139CBF00A40FA6 /* OnboardingCoordinator.swift */; };
-		C67A418524139E1900A40FA6 /* IAuthNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A418424139E1900A40FA6 /* IAuthNetworkService.swift */; };
+		C67A418524139E1900A40FA6 /* CitiesNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A418424139E1900A40FA6 /* CitiesNetworkService.swift */; };
 		C67A418724139EC700A40FA6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A418624139EC700A40FA6 /* AppCoordinator.swift */; };
 		C67A418A24139FB900A40FA6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A418924139FB900A40FA6 /* Router.swift */; };
 		C67A418C2413A01700A40FA6 /* ICoordinatorConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A418B2413A01700A40FA6 /* ICoordinatorConfiguration.swift */; };
@@ -38,6 +38,7 @@
 		C67A41B4241401C700A40FA6 /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41B3241401C700A40FA6 /* SecureTextField.swift */; };
 		C67A41B72414098500A40FA6 /* SelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C67A41B62414098500A40FA6 /* SelectionView.xib */; };
 		C67A41B924140A6200A40FA6 /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41B824140A6200A40FA6 /* SelectionView.swift */; };
+		C67A41BC24142F6800A40FA6 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41BB24142F6800A40FA6 /* City.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +57,7 @@
 		C67A417B24139BD500A40FA6 /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
 		C67A417D24139C0700A40FA6 /* CoordinatorFinishable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFinishable.swift; sourceTree = "<group>"; };
 		C67A418124139CBF00A40FA6 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
-		C67A418424139E1900A40FA6 /* IAuthNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAuthNetworkService.swift; sourceTree = "<group>"; };
+		C67A418424139E1900A40FA6 /* CitiesNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesNetworkService.swift; sourceTree = "<group>"; };
 		C67A418624139EC700A40FA6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C67A418924139FB900A40FA6 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		C67A418B2413A01700A40FA6 /* ICoordinatorConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICoordinatorConfiguration.swift; sourceTree = "<group>"; };
@@ -76,6 +77,7 @@
 		C67A41B3241401C700A40FA6 /* SecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
 		C67A41B62414098500A40FA6 /* SelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionView.xib; sourceTree = "<group>"; };
 		C67A41B824140A6200A40FA6 /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
+		C67A41BB24142F6800A40FA6 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		DC1B21AA0E959B89369DF7D9 /* Pods-RegistrationFormSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegistrationFormSample.release.xcconfig"; path = "Target Support Files/Pods-RegistrationFormSample/Pods-RegistrationFormSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 				C67A4158241393EC00A40FA6 /* AppDelegate.swift */,
 				C67A418624139EC700A40FA6 /* AppCoordinator.swift */,
 				C67A41942413D25B00A40FA6 /* Base */,
+				C67A41BA24142F5100A40FA6 /* Models */,
 				C67A417F24139C5F00A40FA6 /* UI Modules */,
 				C67A417824139AF500A40FA6 /* Services */,
 				C67A41992413D4EC00A40FA6 /* Resources */,
@@ -214,7 +217,7 @@
 		C67A418324139DF200A40FA6 /* Network Services */ = {
 			isa = PBXGroup;
 			children = (
-				C67A418424139E1900A40FA6 /* IAuthNetworkService.swift */,
+				C67A418424139E1900A40FA6 /* CitiesNetworkService.swift */,
 			);
 			path = "Network Services";
 			sourceTree = "<group>";
@@ -306,6 +309,14 @@
 				C67A41B824140A6200A40FA6 /* SelectionView.swift */,
 			);
 			path = "Selection View";
+			sourceTree = "<group>";
+		};
+		C67A41BA24142F5100A40FA6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C67A41BB24142F6800A40FA6 /* City.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,11 +484,12 @@
 				C67A418724139EC700A40FA6 /* AppCoordinator.swift in Sources */,
 				C67A41932413A79400A40FA6 /* R.generated.swift in Sources */,
 				C67A41A32413DC9600A40FA6 /* UnderlinedTextField.swift in Sources */,
+				C67A41BC24142F6800A40FA6 /* City.swift in Sources */,
 				C67A41732413977500A40FA6 /* Routeable.swift in Sources */,
 				C67A41A92413E1CB00A40FA6 /* SignUpSceneFactory.swift in Sources */,
 				C67A418E2413A40600A40FA6 /* Services.swift in Sources */,
 				C67A41712413973B00A40FA6 /* ICoordinatorFactory.swift in Sources */,
-				C67A418524139E1900A40FA6 /* IAuthNetworkService.swift in Sources */,
+				C67A418524139E1900A40FA6 /* CitiesNetworkService.swift in Sources */,
 				C67A418A24139FB900A40FA6 /* Router.swift in Sources */,
 				C67A417A24139B9D00A40FA6 /* OnboardingCoordinatorFactory.swift in Sources */,
 				C67A41AB2413E1F400A40FA6 /* SceneFactory.swift in Sources */,

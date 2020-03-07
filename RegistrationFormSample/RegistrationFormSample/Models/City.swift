@@ -1,15 +1,11 @@
 //
-//  IAuthNetworkService.swift
+//  City.swift
 //  RegistrationFormSample
 //
 //  Created by Serhii Palash on 07/03/2020.
 //  Copyright © 2020 Serhii Palash. All rights reserved.
 //
 
-protocol ICitiesNetworkService {
-    
-}
-
-final class CitiesNetworkService: ICitiesNetworkService {
-    
+struct City: Decodable {
+    let title: String
 }

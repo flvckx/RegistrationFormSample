@@ -25,7 +25,9 @@ final class OnboardingView: UIViewController {
         setUpView()
     }
     
-    
+    func selectCity(at row: Int) {
+        selectionView.textValue = viewModel.cities[row].title
+    }
 }
 
 // MARK: - UIPickerViewDatasource
@@ -46,7 +48,7 @@ extension OnboardingView: UIPickerViewDataSource {
 extension OnboardingView: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return viewModel.cities[row]
+        return viewModel.cities[row].title
     }
 }
 
@@ -69,25 +71,6 @@ private extension OnboardingView {
         confirmPasswordTextField.placeholder = R.string.localizible.repeatPassword()
         
         selectionView.textValue = R.string.localizible.chooseCity()
-        selectionView.onSelectAction = presentSelectionSheet
-    }
-    
-    private func presentSelectionSheet() {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        
-        let pickerView = UIPickerView(frame: CGRect(x: 5, y: 20, width: 250, height: 140))
-        pickerView.dataSource = self
-        pickerView.delegate = self
-        
-        alert.view.addSubview(pickerView)
-        
-        let selectAction = UIAlertAction(
-            title: R.string.localizible.apply(),
-            style: .default) { [weak self] _ in
-                let selectedIndex = pickerView.selectedRow(inComponent: 0)
-                self?.selectionView.textValue = self?.viewModel.cities[selectedIndex]
-        }
-        alert.addAction(selectAction)
-        present(alert, animated: true)
+        selectionView.onSelectAction = viewModel.selectionAction
     }
 }

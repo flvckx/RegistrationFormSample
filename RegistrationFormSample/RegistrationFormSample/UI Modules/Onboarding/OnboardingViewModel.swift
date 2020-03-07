@@ -7,21 +7,32 @@
 //
 
 protocol IOnboardingViewModel: OnboardingViewModelOutput {
-    var cities: [String] { get }
+    var cities: [City] { get }
 }
 
 protocol OnboardingViewModelOutput {
     var onNextTouch: (() -> Void)? { get set }
+    var selectionAction: (() -> Void)? { get set }
 }
 
 final class OnboardingViewModel: IOnboardingViewModel {
     
     private let citiesNetworkService: ICitiesNetworkService
     
-    var cities: [String] = ["fsda", "a", "asdas", "asda", "asdasda"]
+    var cities: [City] = []
+    
+    var selectionAction: (() -> Void)?
     var onNextTouch: (() -> Void)?
     
     init(citiesNetworkService: ICitiesNetworkService) {
         self.citiesNetworkService = citiesNetworkService
+        
+        loadCities()
+    }
+    
+    func loadCities() {
+        citiesNetworkService.getCities { [weak self] (cities) in
+            self?.cities = cities
+        }
     }
 }
