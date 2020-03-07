@@ -52,6 +52,8 @@ final class AppCoordinator: Coordinatable {
     }
 
     private func changeFlow(_ flow: FlowConfigurations, finishCallBack: @escaping (FlowConfigurations) -> Void) {
+        setupNavigationBar(for: flow)
+        
         let factory = flow.factory
         var coordinator = factory.create(router: router, services: services)
         coordinator.finishFlow = { _ in
@@ -65,5 +67,14 @@ final class AppCoordinator: Coordinatable {
 
         currentFlow = flow
     }
+    
+    private func setupNavigationBar(for flow: FlowConfigurations) {
+        switch flow {
+        case .auth:
+            let navigationAppereance = UINavigationBar.appearance()
+            navigationAppereance.barTintColor = R.color.baseGreen()
+            navigationAppereance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            navigationAppereance.isTranslucent = false
+        }
+    }
 }
-

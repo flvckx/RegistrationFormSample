@@ -7,5 +7,5 @@
 //
 
 protocol IAppServices {
-    var authNetworkService: IAuthNetworkService { get }
+    var citiesNetworkService: ICitiesNetworkService { get }
 }

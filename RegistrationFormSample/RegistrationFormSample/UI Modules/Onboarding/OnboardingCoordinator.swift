@@ -6,12 +6,14 @@
 //  Copyright © 2020 Serhii Palash. All rights reserved.
 //
 
+import UIKit
+
 final class OnboardingCoordinator: Coordinatable & CoordinatorFinishable {
 
     private let router: Routable
     private let applicationServices: IAppServices
 
-//    private let signupSceneFactory: SignupSceneFactory
+    private let signupSceneFactory: SignupSceneFactory
     
     var finishFlow: ((Any?) -> Void)?
     
@@ -19,10 +21,16 @@ final class OnboardingCoordinator: Coordinatable & CoordinatorFinishable {
         self.router = router
         self.applicationServices = applicationServices
 
-//        self.signupSceneFactory = SignupSceneFactory()
+        self.signupSceneFactory = SignupSceneFactory()
     }
     
     func start() {
+        var scene = signupSceneFactory.scene(services: applicationServices)
         
+        scene.viewModel.onNextTouch = {
+            
+        }
+
+        router.setRootModule(scene.view)
     }
 }

@@ -30,7 +30,6 @@ final class Router: NSObject, Routable {
     
     init(rootController: UINavigationController) {
         self.rootController = rootController
-        self.rootController?.navigationBar.prefersLargeTitles = true
     }
 
     // MARK: Routable
