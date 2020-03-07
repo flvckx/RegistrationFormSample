@@ -1,0 +1,5 @@
+excluded:
+    - vendor
+    - fastlane
+    - Pods
+    - R.generated.swift
