@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhoneTextField" customModule="RegistrationFormSample" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="FH5-OB-5bt" id="XMC-sI-0AC"/>
+                <outlet property="phoneTextField" destination="IJP-Vo-mxV" id="Mrm-gg-5su"/>
+                <outlet property="underlineView" destination="H1P-dk-l03" id="SiE-eH-NGM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FH5-OB-5bt">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IJP-Vo-mxV" customClass="PhoneFormattedTextField" customModule="SwiftPhoneNumberFormatter">
+                    <rect key="frame" x="20" y="25" width="374" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1P-dk-l03">
+                    <rect key="frame" x="20" y="69" width="374" height="1"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="SCc-1m-eFx"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="IJP-Vo-mxV" firstAttribute="centerY" secondItem="FH5-OB-5bt" secondAttribute="centerY" id="BTX-HW-45b"/>
+                <constraint firstAttribute="trailing" secondItem="H1P-dk-l03" secondAttribute="trailing" constant="20" id="KuS-A2-Zuv"/>
+                <constraint firstItem="H1P-dk-l03" firstAttribute="leading" secondItem="FH5-OB-5bt" secondAttribute="leading" constant="20" id="Owm-Pg-b5n"/>
+                <constraint firstItem="IJP-Vo-mxV" firstAttribute="trailing" secondItem="H1P-dk-l03" secondAttribute="trailing" id="Sqk-Oa-36r"/>
+                <constraint firstItem="IJP-Vo-mxV" firstAttribute="leading" secondItem="H1P-dk-l03" secondAttribute="leading" id="aT8-8F-h2w"/>
+                <constraint firstAttribute="bottom" secondItem="H1P-dk-l03" secondAttribute="bottom" id="lRM-8F-hX0"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="da5-EN-Czp"/>
+            <point key="canvasLocation" x="100.00000000000001" y="86.383928571428569"/>
+        </view>
+    </objects>
+</document>

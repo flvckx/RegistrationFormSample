@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Onboarding View-->
+        <scene sceneID="abw-Xa-550">
+            <objects>
+                <viewController storyboardIdentifier="registrationForm" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QXI-xc-IaM" customClass="OnboardingView" customModule="RegistrationFormSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AWu-jR-GeN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brz-Ld-xyE" customClass="UnderlinedTextField" customModule="RegistrationFormSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Cxb-eJ-0Nk"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeH-qZ-7bv" customClass="UnderlinedTextField" customModule="RegistrationFormSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="byP-7v-hiF"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1N-bJ-dI8" customClass="UnderlinedTextField" customModule="RegistrationFormSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="100" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Z4p-bk-LCp"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Je9-YR-GnU" customClass="PhoneTextField" customModule="RegistrationFormSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="150" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="SBq-f3-4jJ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDJ-uJ-Eo8" customClass="SelectionView" customModule="RegistrationFormSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="200" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YT9-pX-PDt"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mH3-B1-Ix2" customClass="SecureTextField" customModule="RegistrationFormSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="250" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="HCi-2Z-bFq"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPz-TK-72F" customClass="SecureTextField" customModule="RegistrationFormSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="300" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9Ny-gW-s0O"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOp-7Y-Lbw">
+                                <rect key="frame" x="20" y="358" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Uv-YP-nqU">
+                                <rect key="frame" x="20" y="757" width="374" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="5sr-TC-sf4"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextButtonTouched:" destination="QXI-xc-IaM" eventType="touchUpInside" id="oYH-08-NVK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tPz-TK-72F" firstAttribute="leading" secondItem="Yos-WI-Dbn" secondAttribute="leading" id="0he-ro-rfY"/>
+                            <constraint firstItem="bOp-7Y-Lbw" firstAttribute="centerX" secondItem="AWu-jR-GeN" secondAttribute="centerX" id="1vT-Y2-6DE"/>
+                            <constraint firstItem="QeH-qZ-7bv" firstAttribute="trailing" secondItem="Yos-WI-Dbn" secondAttribute="trailing" id="5As-8g-xDh"/>
+                            <constraint firstItem="mH3-B1-Ix2" firstAttribute="top" secondItem="qDJ-uJ-Eo8" secondAttribute="bottom" id="6Ob-kV-SnR"/>
+                            <constraint firstItem="QeH-qZ-7bv" firstAttribute="top" secondItem="brz-Ld-xyE" secondAttribute="bottom" id="7e4-9M-EIS"/>
+                            <constraint firstItem="mH3-B1-Ix2" firstAttribute="leading" secondItem="Yos-WI-Dbn" secondAttribute="leading" id="8D8-wE-BI4"/>
+                            <constraint firstItem="Je9-YR-GnU" firstAttribute="leading" secondItem="Yos-WI-Dbn" secondAttribute="leading" id="8cJ-hi-B71"/>
+                            <constraint firstAttribute="trailing" secondItem="brz-Ld-xyE" secondAttribute="trailing" id="9dx-bq-tdp"/>
+                            <constraint firstItem="bOp-7Y-Lbw" firstAttribute="top" secondItem="tPz-TK-72F" secondAttribute="bottom" constant="8" id="A3L-9n-vgj"/>
+                            <constraint firstItem="brz-Ld-xyE" firstAttribute="leading" secondItem="AWu-jR-GeN" secondAttribute="leading" id="Cdz-hF-4hs"/>
+                            <constraint firstItem="bOp-7Y-Lbw" firstAttribute="leading" secondItem="Yos-WI-Dbn" secondAttribute="leading" constant="20" id="EUa-G7-Xve"/>
+                            <constraint firstItem="U1N-bJ-dI8" firstAttribute="leading" secondItem="Yos-WI-Dbn" secondAttribute="leading" id="Gs0-Fg-Y18"/>
+                            <constraint firstItem="Yos-WI-Dbn" firstAttribute="trailing" secondItem="mH3-B1-Ix2" secondAttribute="trailing" id="Jk6-Av-zEv"/>
+                            <constraint firstItem="brz-Ld-xyE" firstAttribute="top" secondItem="AWu-jR-GeN" secondAttribute="top" id="N7p-XY-x5Y"/>
+                            <constraint firstItem="Yos-WI-Dbn" firstAttribute="trailing" secondItem="4Uv-YP-nqU" secondAttribute="trailing" constant="20" id="OI1-cT-Uf3"/>
+                            <constraint firstItem="Je9-YR-GnU" firstAttribute="top" secondItem="U1N-bJ-dI8" secondAttribute="bottom" id="P5d-O2-Rjs"/>
+                            <constraint firstItem="qDJ-uJ-Eo8" firstAttribute="top" secondItem="Je9-YR-GnU" secondAttribute="bottom" id="Uya-Ra-EB4"/>
+                            <constraint firstItem="Je9-YR-GnU" firstAttribute="trailing" secondItem="Yos-WI-Dbn" secondAttribute="trailing" id="WEM-Rp-B9y"/>
+                            <constraint firstItem="tPz-TK-72F" firstAttribute="top" secondItem="mH3-B1-Ix2" secondAttribute="bottom" id="X2z-JG-ryG"/>
+                            <constraint firstItem="Yos-WI-Dbn" firstAttribute="bottom" secondItem="4Uv-YP-nqU" secondAttribute="bottom" constant="50" id="Yat-HN-dEz"/>
+                            <constraint firstItem="QeH-qZ-7bv" firstAttribute="leading" secondItem="AWu-jR-GeN" secondAttribute="leading" id="Znz-Pk-DYc"/>
+                            <constraint firstItem="4Uv-YP-nqU" firstAttribute="leading" secondItem="Yos-WI-Dbn" secondAttribute="leading" constant="20" id="frx-KL-Vk0"/>
+                            <constraint firstItem="Yos-WI-Dbn" firstAttribute="trailing" secondItem="qDJ-uJ-Eo8" secondAttribute="trailing" id="ftL-0j-30G"/>
+                            <constraint firstItem="tPz-TK-72F" firstAttribute="trailing" secondItem="Yos-WI-Dbn" secondAttribute="trailing" id="nri-wz-iGe"/>
+                            <constraint firstItem="U1N-bJ-dI8" firstAttribute="trailing" secondItem="Yos-WI-Dbn" secondAttribute="trailing" id="ol0-Dx-YwJ"/>
+                            <constraint firstItem="qDJ-uJ-Eo8" firstAttribute="leading" secondItem="Yos-WI-Dbn" secondAttribute="leading" id="pc7-Xa-AKC"/>
+                            <constraint firstItem="U1N-bJ-dI8" firstAttribute="top" secondItem="QeH-qZ-7bv" secondAttribute="bottom" id="swO-65-9Bc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Yos-WI-Dbn"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="tPz-TK-72F" id="cGg-bS-SNf"/>
+                        <outlet property="emailTextFieldView" destination="U1N-bJ-dI8" id="Rul-74-A2Q"/>
+                        <outlet property="nameTextFieldView" destination="brz-Ld-xyE" id="Cm5-pY-urP"/>
+                        <outlet property="nextButton" destination="4Uv-YP-nqU" id="9ja-rt-0HI"/>
+                        <outlet property="passwordTextField" destination="mH3-B1-Ix2" id="Max-I4-fh8"/>
+                        <outlet property="phoneTextFieldView" destination="Je9-YR-GnU" id="qmi-Ol-MlL"/>
+                        <outlet property="selectionView" destination="qDJ-uJ-Eo8" id="R4P-2E-SY7"/>
+                        <outlet property="surnameTextFieldView" destination="QeH-qZ-7bv" id="pa7-K2-mBu"/>
+                        <outlet property="termsAndCoLabel" destination="bOp-7Y-Lbw" id="Jbf-PQ-2YO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TNV-WR-8La" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1005.7971014492755" y="164.73214285714286"/>
+        </scene>
+    </scenes>
+</document>

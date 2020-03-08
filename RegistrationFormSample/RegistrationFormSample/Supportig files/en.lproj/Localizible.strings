@@ -1,0 +1,19 @@
+/* 
+  Localizible.strings
+  RegistrationFormSample
+
+  Created by Serhii Palash on 07/03/2020.
+  Copyright © 2020 Serhii Palash. All rights reserved.
+*/
+
+"registration" = "Регистрация";
+"enterName" = "Введите Ваше Имя";
+"enterSurname" = "Введите Вашу фамилию";
+"email" = "Email";
+"phone" = "Телефон";
+"chooseCity" = "Выберите город";
+"createPassword" = "Придумайте пароль";
+"repeatPassword" = "Повторите пароль";
+"acceptingTermsAndCo" = "Продолжая вы принимаете условия и правила сообщества YORA";
+"next" = "Далее";
+"apply" = "Применить";

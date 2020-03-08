@@ -7,16 +7,15 @@
 //
 
 final class Services: IAppServices {
-    var authNetworkService: IAuthNetworkService
+    var citiesNetworkService: ICitiesNetworkService
 
-    required init(authNetworkService: IAuthNetworkService) {
-        self.authNetworkService = authNetworkService
+    required init(citiesNetworkService: ICitiesNetworkService) {
+        self.citiesNetworkService = citiesNetworkService
     }
 
     class func buildServices() -> Services {
-        let authNetworkService = AuthNetworkService()
+        let citiesNetworkService = CitiesNetworkService()
 
-        return Services(authNetworkService: authNetworkService)
+        return Services(citiesNetworkService: citiesNetworkService)
     }
 }
-
