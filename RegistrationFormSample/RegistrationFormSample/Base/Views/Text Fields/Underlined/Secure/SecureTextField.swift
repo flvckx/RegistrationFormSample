@@ -9,19 +9,19 @@
 import UIKit
 
 class SecureTextField: UnderlinedTextField {
-    
+
     @IBOutlet private var secureEntryButton: UIButton! {
         didSet {
             secureEntryButton.setBackgroundImage(R.image.eyeIcon(), for: .normal)
             secureEntryButton.addTarget(self, action: #selector(secureEntryButtonTouched), for: .touchUpInside)
         }
     }
-    
+
     override func loadNib() {
         Bundle.main.loadNibNamed(R.nib.secureTextField.name, owner: self, options: nil)
         isSecureEntry = true
     }
-    
+
     @objc private func secureEntryButtonTouched() {
         isSecureEntry = !isSecureEntry
     }

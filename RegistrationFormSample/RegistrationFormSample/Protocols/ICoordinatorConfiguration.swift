@@ -9,4 +9,3 @@
 protocol ICoordinatorConfiguration {
     var factory: ICoordinatorFactory { get }
 }
-

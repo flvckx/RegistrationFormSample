@@ -8,15 +8,14 @@
 
 import Alamofire
 
-fileprivate let citiesURL = URL(string: "http://159.89.21.39/api/v1/cities")!
+private let citiesURL = URL(string: "http://159.89.21.39/api/v1/cities")!
 
 protocol ICitiesNetworkService {
     func getCities(completion: @escaping ([City]) -> Void)
 }
 
 final class CitiesNetworkService: ICitiesNetworkService {
-    
-    
+
     func getCities(completion: @escaping ([City]) -> Void) {
         request(citiesURL).response { (response) in
             guard let data = response.data, response.error == nil else { return }

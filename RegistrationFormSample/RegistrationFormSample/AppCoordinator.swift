@@ -46,14 +46,14 @@ final class AppCoordinator: Coordinatable {
 //        loadAuthorization()
         changeFlow(currentFlow, finishCallBack: handleFlowCallback(_:))
     }
-    
+
     private func handleFlowCallback(_ flow: FlowConfigurations) {
         // Change flow logic
     }
 
     private func changeFlow(_ flow: FlowConfigurations, finishCallBack: @escaping (FlowConfigurations) -> Void) {
         setupNavigationBar(for: flow)
-        
+
         let factory = flow.factory
         var coordinator = factory.create(router: router, services: services)
         coordinator.finishFlow = { _ in
@@ -67,7 +67,7 @@ final class AppCoordinator: Coordinatable {
 
         currentFlow = flow
     }
-    
+
     private func setupNavigationBar(for flow: FlowConfigurations) {
         switch flow {
         case .auth:

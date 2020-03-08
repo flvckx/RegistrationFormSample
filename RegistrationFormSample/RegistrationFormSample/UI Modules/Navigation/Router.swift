@@ -15,19 +15,19 @@ final class Router: NSObject, Routable {
     }
 
     fileprivate weak var rootController: UINavigationController?
-    
+
     private var presentedNavigationController: UINavigationController?
 
     var toPresent: UIViewController? {
         if presentedNavigationController != nil {
             return presentedNavigationController
         }
-        
+
         return rootController
     }
 
     // MARK: Initialization
-    
+
     init(rootController: UINavigationController) {
         self.rootController = rootController
     }
@@ -151,4 +151,3 @@ final class Router: NSObject, Routable {
         }
     }
 }
-

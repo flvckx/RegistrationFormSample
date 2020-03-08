@@ -9,7 +9,7 @@
 import UIKit
 
 class SelectionView: UIView {
-    
+
     @IBOutlet private var contentView: UIView!
     @IBOutlet private var valueLabel: UILabel!
     @IBOutlet private var selectionImageView: UIImageView! {
@@ -17,36 +17,36 @@ class SelectionView: UIView {
             selectionImageView.image = R.image.selectListIcon()
         }
     }
-    
+
     @IBOutlet private var underlineView: UIView! {
         didSet {
             underlineView.backgroundColor = R.color.lightGray()
         }
     }
-    
+
     var onSelectAction: (() -> Void)?
     var textValue: String? {
         didSet {
             valueLabel.text = textValue
         }
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadView()
         initView()
     }
-    
+
     func loadView() {
         Bundle.main.loadNibNamed(R.nib.selectionView.name, owner: self, options: nil)
     }
-    
+
     private func initView() {
         addSubview(contentView)
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
-    
+
     @IBAction private func selectAction(_ sender: Any) {
         onSelectAction?()
     }

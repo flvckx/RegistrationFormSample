@@ -19,4 +19,3 @@ final class Services: IAppServices {
         return Services(citiesNetworkService: citiesNetworkService)
     }
 }
-
