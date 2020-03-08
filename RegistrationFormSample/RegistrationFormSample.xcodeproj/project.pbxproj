@@ -45,6 +45,7 @@
 		C67A41CE24144A6D00A40FA6 /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41CD24144A6D00A40FA6 /* PhoneTextField.swift */; };
 		C67A41D02414E8E400A40FA6 /* TextContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41CF2414E8E400A40FA6 /* TextContainable.swift */; };
 		C67A41D22414F20B00A40FA6 /* KeyboardSupportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41D12414F20B00A40FA6 /* KeyboardSupportController.swift */; };
+		C67A41D7241504D700A40FA6 /* UIViewController+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41D6241504D700A40FA6 /* UIViewController+StatusBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		C67A41CD24144A6D00A40FA6 /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
 		C67A41CF2414E8E400A40FA6 /* TextContainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextContainable.swift; sourceTree = "<group>"; };
 		C67A41D12414F20B00A40FA6 /* KeyboardSupportController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardSupportController.swift; sourceTree = "<group>"; };
+		C67A41D6241504D700A40FA6 /* UIViewController+StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+StatusBar.swift"; sourceTree = "<group>"; };
 		DC1B21AA0E959B89369DF7D9 /* Pods-RegistrationFormSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegistrationFormSample.release.xcconfig"; path = "Target Support Files/Pods-RegistrationFormSample/Pods-RegistrationFormSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				C67A41952413D27A00A40FA6 /* Views */,
+				C67A41D5241504BF00A40FA6 /* Extensions */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -351,6 +354,14 @@
 				C67A41CD24144A6D00A40FA6 /* PhoneTextField.swift */,
 			);
 			path = Phone;
+			sourceTree = "<group>";
+		};
+		C67A41D5241504BF00A40FA6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C67A41D6241504D700A40FA6 /* UIViewController+StatusBar.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -530,6 +541,7 @@
 				C67A418A24139FB900A40FA6 /* Router.swift in Sources */,
 				C67A417A24139B9D00A40FA6 /* OnboardingCoordinatorFactory.swift in Sources */,
 				C67A41AB2413E1F400A40FA6 /* SceneFactory.swift in Sources */,
+				C67A41D7241504D700A40FA6 /* UIViewController+StatusBar.swift in Sources */,
 				C67A4159241393EC00A40FA6 /* AppDelegate.swift in Sources */,
 				C67A418224139CBF00A40FA6 /* OnboardingCoordinator.swift in Sources */,
 				C67A417724139AC700A40FA6 /* IAppServices.swift in Sources */,

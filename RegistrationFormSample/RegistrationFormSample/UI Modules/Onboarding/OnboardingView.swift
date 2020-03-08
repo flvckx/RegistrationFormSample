@@ -93,6 +93,7 @@ extension OnboardingView: UIPickerViewDelegate {
 private extension OnboardingView {
 
     func setUpView() {
+        setStatusBarColor(R.color.baseGreen())
         setUpNavBar()
         setUpTextFields()
 
