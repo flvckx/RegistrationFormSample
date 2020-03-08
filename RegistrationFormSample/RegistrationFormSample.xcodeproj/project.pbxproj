@@ -46,6 +46,10 @@
 		C67A41D02414E8E400A40FA6 /* TextContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41CF2414E8E400A40FA6 /* TextContainable.swift */; };
 		C67A41D22414F20B00A40FA6 /* KeyboardSupportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41D12414F20B00A40FA6 /* KeyboardSupportController.swift */; };
 		C67A41D7241504D700A40FA6 /* UIViewController+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41D6241504D700A40FA6 /* UIViewController+StatusBar.swift */; };
+		C67A41DB2415155B00A40FA6 /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41DA2415155B00A40FA6 /* VerificationView.swift */; };
+		C67A41DD2415170800A40FA6 /* VerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41DC2415170800A40FA6 /* VerificationViewModel.swift */; };
+		C67A41DF241517AE00A40FA6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41DE241517AE00A40FA6 /* User.swift */; };
+		C67A41E124151C8100A40FA6 /* VerificationSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41E024151C8100A40FA6 /* VerificationSceneFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +96,10 @@
 		C67A41CF2414E8E400A40FA6 /* TextContainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextContainable.swift; sourceTree = "<group>"; };
 		C67A41D12414F20B00A40FA6 /* KeyboardSupportController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardSupportController.swift; sourceTree = "<group>"; };
 		C67A41D6241504D700A40FA6 /* UIViewController+StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+StatusBar.swift"; sourceTree = "<group>"; };
+		C67A41DA2415155B00A40FA6 /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
+		C67A41DC2415170800A40FA6 /* VerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewModel.swift; sourceTree = "<group>"; };
+		C67A41DE241517AE00A40FA6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C67A41E024151C8100A40FA6 /* VerificationSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationSceneFactory.swift; sourceTree = "<group>"; };
 		DC1B21AA0E959B89369DF7D9 /* Pods-RegistrationFormSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegistrationFormSample.release.xcconfig"; path = "Target Support Files/Pods-RegistrationFormSample/Pods-RegistrationFormSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				C67A41A82413E1CB00A40FA6 /* SignUpSceneFactory.swift */,
+				C67A41E024151C8100A40FA6 /* VerificationSceneFactory.swift */,
 			);
 			path = SceneFactories;
 			sourceTree = "<group>";
@@ -222,8 +231,8 @@
 		C67A418024139CAC00A40FA6 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				C67A41A42413DE5A00A40FA6 /* OnboardingView.swift */,
-				C67A41A62413DE7A00A40FA6 /* OnboardingViewModel.swift */,
+				C67A41D824150C4800A40FA6 /* Registration */,
+				C67A41D924150C5700A40FA6 /* Verification */,
 				C67A41AC2413E34600A40FA6 /* Onboarding.storyboard */,
 				C67A418124139CBF00A40FA6 /* OnboardingCoordinator.swift */,
 			);
@@ -334,6 +343,7 @@
 			children = (
 				C67A41BB24142F6800A40FA6 /* City.swift */,
 				C67A41C224143A2900A40FA6 /* TextFieldContent.swift */,
+				C67A41DE241517AE00A40FA6 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -362,6 +372,24 @@
 				C67A41D6241504D700A40FA6 /* UIViewController+StatusBar.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C67A41D824150C4800A40FA6 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				C67A41A42413DE5A00A40FA6 /* OnboardingView.swift */,
+				C67A41A62413DE7A00A40FA6 /* OnboardingViewModel.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		C67A41D924150C5700A40FA6 /* Verification */ = {
+			isa = PBXGroup;
+			children = (
+				C67A41DA2415155B00A40FA6 /* VerificationView.swift */,
+				C67A41DC2415170800A40FA6 /* VerificationViewModel.swift */,
+			);
+			path = Verification;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -527,12 +555,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C67A418C2413A01700A40FA6 /* ICoordinatorConfiguration.swift in Sources */,
+				C67A41E124151C8100A40FA6 /* VerificationSceneFactory.swift in Sources */,
 				C67A418724139EC700A40FA6 /* AppCoordinator.swift in Sources */,
 				C67A41932413A79400A40FA6 /* R.generated.swift in Sources */,
 				C67A41D02414E8E400A40FA6 /* TextContainable.swift in Sources */,
+				C67A41DF241517AE00A40FA6 /* User.swift in Sources */,
 				C67A41A32413DC9600A40FA6 /* UnderlinedTextField.swift in Sources */,
 				C67A41BC24142F6800A40FA6 /* City.swift in Sources */,
 				C67A41732413977500A40FA6 /* Routeable.swift in Sources */,
+				C67A41DD2415170800A40FA6 /* VerificationViewModel.swift in Sources */,
 				C67A41A92413E1CB00A40FA6 /* SignUpSceneFactory.swift in Sources */,
 				C67A418E2413A40600A40FA6 /* Services.swift in Sources */,
 				C67A41712413973B00A40FA6 /* ICoordinatorFactory.swift in Sources */,
@@ -541,6 +572,7 @@
 				C67A418A24139FB900A40FA6 /* Router.swift in Sources */,
 				C67A417A24139B9D00A40FA6 /* OnboardingCoordinatorFactory.swift in Sources */,
 				C67A41AB2413E1F400A40FA6 /* SceneFactory.swift in Sources */,
+				C67A41DB2415155B00A40FA6 /* VerificationView.swift in Sources */,
 				C67A41D7241504D700A40FA6 /* UIViewController+StatusBar.swift in Sources */,
 				C67A4159241393EC00A40FA6 /* AppDelegate.swift in Sources */,
 				C67A418224139CBF00A40FA6 /* OnboardingCoordinator.swift in Sources */,

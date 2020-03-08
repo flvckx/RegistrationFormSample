@@ -62,7 +62,13 @@ final class OnboardingView: KeyboardSupportController {
     }
 
     @IBAction private func nextButtonTouched(_ sender: Any) {
-
+        let user = User(
+            name: nameTextFieldView.text ?? "",
+            surname: surnameTextFieldView.text ?? "",
+            email: emailTextFieldView.text ?? "",
+            phone: phoneTextFieldView.text ?? ""
+        )
+        viewModel.onNextTouch?(user)
     }
 }
 

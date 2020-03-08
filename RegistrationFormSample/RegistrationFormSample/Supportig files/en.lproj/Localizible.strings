@@ -6,7 +6,11 @@
   Copyright © 2020 Serhii Palash. All rights reserved.
 */
 
+// MARK: - Screen names
 "registration" = "Регистрация";
+"verification" = "Верификация";
+
+// MARK: - Text fields
 "enterName" = "Введите Ваше Имя";
 "enterSurname" = "Введите Вашу фамилию";
 "email" = "Email";
@@ -14,6 +18,16 @@
 "chooseCity" = "Выберите город";
 "createPassword" = "Придумайте пароль";
 "repeatPassword" = "Повторите пароль";
+"enterTextLessThan" = "Введите текст не менее %d символов.";
+
+// MARK: - Texts
 "acceptingTermsAndCo" = "Продолжая вы принимаете условия и правила сообщества YORA";
+"chooseYourProfilePhoto" = "Выберите фото для вашего профиля! Пример того, как должно выглядеть фото, можно увидеть здесь.";
+"tellAboutYourself" = "Расскажите о себе";
+
+// MARK: - Buttons
 "next" = "Далее";
 "apply" = "Применить";
+"skip" = "Пропустить";
+"save" = "Сохранить";
+

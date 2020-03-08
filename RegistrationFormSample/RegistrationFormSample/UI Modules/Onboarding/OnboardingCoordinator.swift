@@ -14,6 +14,7 @@ final class OnboardingCoordinator: Coordinatable & CoordinatorFinishable {
     private let applicationServices: IAppServices
 
     private let signupSceneFactory: SignupSceneFactory
+    private let verificationSceneFactory: VerificationSceneFactory
 
     var finishFlow: ((Any?) -> Void)?
 
@@ -22,20 +23,31 @@ final class OnboardingCoordinator: Coordinatable & CoordinatorFinishable {
         self.applicationServices = applicationServices
 
         self.signupSceneFactory = SignupSceneFactory()
+        self.verificationSceneFactory = VerificationSceneFactory()
     }
 
     func start() {
+        showRegistrationForm()
+    }
+
+    private func showRegistrationForm() {
         var scene = signupSceneFactory.scene(services: applicationServices)
 
         scene.viewModel.selectionAction = {
             self.presentSelectionModeAlert(on: scene.view)
         }
 
-        scene.viewModel.onNextTouch = {
-
+        scene.viewModel.onNextTouch = { user in
+            self.showVerificationView(user: user)
         }
 
         router.setRootModule(scene.view)
+    }
+
+    private func showVerificationView(user: User) {
+        let scene = verificationSceneFactory.scene(user: user, services: applicationServices)
+
+        router.push(scene.view, animated: true)
     }
 
     private func presentSelectionModeAlert(on view: Presentable) {

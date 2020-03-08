@@ -12,7 +12,7 @@ final class SignupSceneFactory: SceneFactory {
 
     typealias Scene = (view: Presentable, viewModel: OnboardingViewModelOutput)
 
-    func scene(services: IAppServices) -> (view: Presentable, viewModel: OnboardingViewModelOutput) {
+    func scene(services: IAppServices) -> Scene {
         let viewModel = OnboardingViewModel(citiesNetworkService: services.citiesNetworkService)
 
         guard let view = R.storyboard.onboarding.registrationForm() else {
