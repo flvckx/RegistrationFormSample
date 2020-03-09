@@ -114,10 +114,12 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 2 colors.
+  /// This `R.color` struct is generated, and contains static references to 3 colors.
   struct color {
     /// Color `baseGreen`.
     static let baseGreen = Rswift.ColorResource(bundle: R.hostingBundle, name: "baseGreen")
+    /// Color `darkGray`.
+    static let darkGray = Rswift.ColorResource(bundle: R.hostingBundle, name: "darkGray")
     /// Color `lightGray`.
     static let lightGray = Rswift.ColorResource(bundle: R.hostingBundle, name: "lightGray")
 
@@ -127,6 +129,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func baseGreen(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.baseGreen, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "darkGray", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func darkGray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.darkGray, compatibleWith: traitCollection)
     }
     #endif
 
@@ -142,17 +153,35 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 2 images.
+  /// This `R.image` struct is generated, and contains static references to 4 images.
   struct image {
+    /// Image `backButton`.
+    static let backButton = Rswift.ImageResource(bundle: R.hostingBundle, name: "backButton")
     /// Image `eyeIcon`.
     static let eyeIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "eyeIcon")
+    /// Image `profilePhotoPlaceholder`.
+    static let profilePhotoPlaceholder = Rswift.ImageResource(bundle: R.hostingBundle, name: "profilePhotoPlaceholder")
     /// Image `selectListIcon`.
     static let selectListIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "selectListIcon")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "backButton", bundle: ..., traitCollection: ...)`
+    static func backButton(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.backButton, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "eyeIcon", bundle: ..., traitCollection: ...)`
     static func eyeIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.eyeIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "profilePhotoPlaceholder", bundle: ..., traitCollection: ...)`
+    static func profilePhotoPlaceholder(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profilePhotoPlaceholder, compatibleWith: traitCollection)
     }
     #endif
 
@@ -230,7 +259,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizible` struct is generated, and contains static references to 11 localization keys.
+    /// This `R.string.localizible` struct is generated, and contains static references to 21 localization keys.
     struct localizible {
       /// en translation: Email
       ///
@@ -244,14 +273,42 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ru
       static let enterSurname = Rswift.StringResource(key: "enterSurname", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: Введите текст не менее %d символов.
+      ///
+      /// Locales: en, ru
+      static let enterTextLessThan = Rswift.StringResource(key: "enterTextLessThan", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: Верификация
+      ///
+      /// Locales: en, ru
+      static let verification = Rswift.StringResource(key: "verification", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
       /// en translation: Выберите город
       ///
       /// Locales: en, ru
       static let chooseCity = Rswift.StringResource(key: "chooseCity", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: Выберите фото для вашего профиля! Пример того, как должно выглядеть фото, можно увидеть здесь.
+      ///
+      /// Locales: en, ru
+      static let chooseYourProfilePhoto = Rswift.StringResource(key: "chooseYourProfilePhoto", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: Галерея
+      ///
+      /// Locales: en, ru
+      static let photoLibrary = Rswift.StringResource(key: "photoLibrary", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
       /// en translation: Далее
       ///
       /// Locales: en, ru
       static let next = Rswift.StringResource(key: "next", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: Камера
+      ///
+      /// Locales: en, ru
+      static let camera = Rswift.StringResource(key: "camera", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: Отмена
+      ///
+      /// Locales: en, ru
+      static let cancel = Rswift.StringResource(key: "cancel", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: Очистить
+      ///
+      /// Locales: en, ru
+      static let remove = Rswift.StringResource(key: "remove", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
       /// en translation: Повторите пароль
       ///
       /// Locales: en, ru
@@ -268,10 +325,22 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ru
       static let acceptingTermsAndCo = Rswift.StringResource(key: "acceptingTermsAndCo", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: Пропустить
+      ///
+      /// Locales: en, ru
+      static let skip = Rswift.StringResource(key: "skip", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: Расскажите о себе
+      ///
+      /// Locales: en, ru
+      static let tellAboutYourself = Rswift.StringResource(key: "tellAboutYourself", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
       /// en translation: Регистрация
       ///
       /// Locales: en, ru
       static let registration = Rswift.StringResource(key: "registration", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: Сохранить
+      ///
+      /// Locales: en, ru
+      static let save = Rswift.StringResource(key: "save", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
       /// en translation: Телефон
       ///
       /// Locales: en, ru
@@ -322,6 +391,38 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("enterSurname", tableName: "Localizible", bundle: bundle, comment: "")
       }
 
+      /// en translation: Введите текст не менее %d символов.
+      ///
+      /// Locales: en, ru
+      static func enterTextLessThan(_ value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("enterTextLessThan", tableName: "Localizible", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizible", preferredLanguages: preferredLanguages) else {
+          return "enterTextLessThan"
+        }
+
+        let format = NSLocalizedString("enterTextLessThan", tableName: "Localizible", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
+      /// en translation: Верификация
+      ///
+      /// Locales: en, ru
+      static func verification(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("verification", tableName: "Localizible", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizible", preferredLanguages: preferredLanguages) else {
+          return "verification"
+        }
+
+        return NSLocalizedString("verification", tableName: "Localizible", bundle: bundle, comment: "")
+      }
+
       /// en translation: Выберите город
       ///
       /// Locales: en, ru
@@ -337,6 +438,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("chooseCity", tableName: "Localizible", bundle: bundle, comment: "")
       }
 
+      /// en translation: Выберите фото для вашего профиля! Пример того, как должно выглядеть фото, можно увидеть здесь.
+      ///
+      /// Locales: en, ru
+      static func chooseYourProfilePhoto(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("chooseYourProfilePhoto", tableName: "Localizible", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizible", preferredLanguages: preferredLanguages) else {
+          return "chooseYourProfilePhoto"
+        }
+
+        return NSLocalizedString("chooseYourProfilePhoto", tableName: "Localizible", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Галерея
+      ///
+      /// Locales: en, ru
+      static func photoLibrary(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("photoLibrary", tableName: "Localizible", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizible", preferredLanguages: preferredLanguages) else {
+          return "photoLibrary"
+        }
+
+        return NSLocalizedString("photoLibrary", tableName: "Localizible", bundle: bundle, comment: "")
+      }
+
       /// en translation: Далее
       ///
       /// Locales: en, ru
@@ -350,6 +481,51 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("next", tableName: "Localizible", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Камера
+      ///
+      /// Locales: en, ru
+      static func camera(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("camera", tableName: "Localizible", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizible", preferredLanguages: preferredLanguages) else {
+          return "camera"
+        }
+
+        return NSLocalizedString("camera", tableName: "Localizible", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Отмена
+      ///
+      /// Locales: en, ru
+      static func cancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("cancel", tableName: "Localizible", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizible", preferredLanguages: preferredLanguages) else {
+          return "cancel"
+        }
+
+        return NSLocalizedString("cancel", tableName: "Localizible", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Очистить
+      ///
+      /// Locales: en, ru
+      static func remove(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("remove", tableName: "Localizible", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizible", preferredLanguages: preferredLanguages) else {
+          return "remove"
+        }
+
+        return NSLocalizedString("remove", tableName: "Localizible", bundle: bundle, comment: "")
       }
 
       /// en translation: Повторите пароль
@@ -412,6 +588,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("acceptingTermsAndCo", tableName: "Localizible", bundle: bundle, comment: "")
       }
 
+      /// en translation: Пропустить
+      ///
+      /// Locales: en, ru
+      static func skip(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("skip", tableName: "Localizible", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizible", preferredLanguages: preferredLanguages) else {
+          return "skip"
+        }
+
+        return NSLocalizedString("skip", tableName: "Localizible", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Расскажите о себе
+      ///
+      /// Locales: en, ru
+      static func tellAboutYourself(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("tellAboutYourself", tableName: "Localizible", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizible", preferredLanguages: preferredLanguages) else {
+          return "tellAboutYourself"
+        }
+
+        return NSLocalizedString("tellAboutYourself", tableName: "Localizible", bundle: bundle, comment: "")
+      }
+
       /// en translation: Регистрация
       ///
       /// Locales: en, ru
@@ -425,6 +631,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("registration", tableName: "Localizible", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Сохранить
+      ///
+      /// Locales: en, ru
+      static func save(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("save", tableName: "Localizible", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizible", preferredLanguages: preferredLanguages) else {
+          return "save"
+        }
+
+        return NSLocalizedString("save", tableName: "Localizible", bundle: bundle, comment: "")
       }
 
       /// en translation: Телефон
@@ -550,14 +771,20 @@ struct _R: Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "Onboarding"
       let registrationForm = StoryboardViewControllerResource<OnboardingView>(identifier: "registrationForm")
+      let verificationForm = StoryboardViewControllerResource<VerificationView>(identifier: "VerificationForm")
 
       func registrationForm(_: Void = ()) -> OnboardingView? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: registrationForm)
       }
 
+      func verificationForm(_: Void = ()) -> VerificationView? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: verificationForm)
+      }
+
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+        if _R.storyboard.onboarding().verificationForm() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'verificationForm' could not be loaded from storyboard 'Onboarding' as 'VerificationView'.") }
         if _R.storyboard.onboarding().registrationForm() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'registrationForm' could not be loaded from storyboard 'Onboarding' as 'OnboardingView'.") }
       }
 

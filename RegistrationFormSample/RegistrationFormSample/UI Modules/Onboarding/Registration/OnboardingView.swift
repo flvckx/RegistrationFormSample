@@ -62,7 +62,13 @@ final class OnboardingView: KeyboardSupportController {
     }
 
     @IBAction private func nextButtonTouched(_ sender: Any) {
-
+        let user = User(
+            name: nameTextFieldView.text ?? "",
+            surname: surnameTextFieldView.text ?? "",
+            email: emailTextFieldView.text ?? "",
+            phone: phoneTextFieldView.text ?? ""
+        )
+        viewModel.onNextTouch?(user)
     }
 }
 
@@ -93,7 +99,6 @@ extension OnboardingView: UIPickerViewDelegate {
 private extension OnboardingView {
 
     func setUpView() {
-        setStatusBarColor(R.color.baseGreen())
         setUpNavBar()
         setUpTextFields()
 
@@ -109,10 +114,7 @@ private extension OnboardingView {
 
     func setUpNavBar() {
         title = R.string.localizible.registration()
-
-        navigationController?.navigationBar.layer.cornerRadius = 10
-        navigationController?.navigationBar.clipsToBounds = true
-        navigationController?.navigationBar.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        setCorneredNavigationBar()
     }
 
     func setUpTextFields() {

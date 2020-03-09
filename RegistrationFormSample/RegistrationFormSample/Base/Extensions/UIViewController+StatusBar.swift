@@ -12,9 +12,11 @@ extension UIViewController {
 
     func setStatusBarColor(_ color: UIColor?) {
         if #available(iOS 13.0, *) {
-            guard let navView = navigationController?.view else { return }
+            guard
+                let navView = navigationController?.view,
+                let statusBarManager = UIApplication.shared.windows.first?.windowScene?.statusBarManager else { return }
 
-            let statusBarHeight: CGFloat = UIApplication.shared.windows.first?.windowScene?.statusBarManager?.statusBarFrame.size.height ?? 0
+            let statusBarHeight: CGFloat = statusBarManager.statusBarFrame.size.height
 
             let statusbarView = UIView()
             statusbarView.backgroundColor = R.color.baseGreen()
@@ -29,7 +31,7 @@ extension UIViewController {
                 .constraint(equalTo: navView.topAnchor).isActive = true
             statusbarView.centerXAnchor
                 .constraint(equalTo: navView.centerXAnchor).isActive = true
-
+            
         } else {
             let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView
             statusBar?.backgroundColor = R.color.baseGreen()
