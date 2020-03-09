@@ -114,10 +114,12 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 2 colors.
+  /// This `R.color` struct is generated, and contains static references to 3 colors.
   struct color {
     /// Color `baseGreen`.
     static let baseGreen = Rswift.ColorResource(bundle: R.hostingBundle, name: "baseGreen")
+    /// Color `darkGray`.
+    static let darkGray = Rswift.ColorResource(bundle: R.hostingBundle, name: "darkGray")
     /// Color `lightGray`.
     static let lightGray = Rswift.ColorResource(bundle: R.hostingBundle, name: "lightGray")
 
@@ -127,6 +129,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func baseGreen(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.baseGreen, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "darkGray", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func darkGray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.darkGray, compatibleWith: traitCollection)
     }
     #endif
 
@@ -142,14 +153,23 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 3 images.
+  /// This `R.image` struct is generated, and contains static references to 4 images.
   struct image {
+    /// Image `backButton`.
+    static let backButton = Rswift.ImageResource(bundle: R.hostingBundle, name: "backButton")
     /// Image `eyeIcon`.
     static let eyeIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "eyeIcon")
     /// Image `profilePhotoPlaceholder`.
     static let profilePhotoPlaceholder = Rswift.ImageResource(bundle: R.hostingBundle, name: "profilePhotoPlaceholder")
     /// Image `selectListIcon`.
     static let selectListIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "selectListIcon")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "backButton", bundle: ..., traitCollection: ...)`
+    static func backButton(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.backButton, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "eyeIcon", bundle: ..., traitCollection: ...)`
@@ -239,7 +259,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizible` struct is generated, and contains static references to 17 localization keys.
+    /// This `R.string.localizible` struct is generated, and contains static references to 21 localization keys.
     struct localizible {
       /// en translation: Email
       ///
@@ -269,10 +289,26 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, ru
       static let chooseYourProfilePhoto = Rswift.StringResource(key: "chooseYourProfilePhoto", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: Галерея
+      ///
+      /// Locales: en, ru
+      static let photoLibrary = Rswift.StringResource(key: "photoLibrary", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
       /// en translation: Далее
       ///
       /// Locales: en, ru
       static let next = Rswift.StringResource(key: "next", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: Камера
+      ///
+      /// Locales: en, ru
+      static let camera = Rswift.StringResource(key: "camera", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: Отмена
+      ///
+      /// Locales: en, ru
+      static let cancel = Rswift.StringResource(key: "cancel", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// en translation: Очистить
+      ///
+      /// Locales: en, ru
+      static let remove = Rswift.StringResource(key: "remove", tableName: "Localizible", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
       /// en translation: Повторите пароль
       ///
       /// Locales: en, ru
@@ -417,6 +453,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("chooseYourProfilePhoto", tableName: "Localizible", bundle: bundle, comment: "")
       }
 
+      /// en translation: Галерея
+      ///
+      /// Locales: en, ru
+      static func photoLibrary(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("photoLibrary", tableName: "Localizible", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizible", preferredLanguages: preferredLanguages) else {
+          return "photoLibrary"
+        }
+
+        return NSLocalizedString("photoLibrary", tableName: "Localizible", bundle: bundle, comment: "")
+      }
+
       /// en translation: Далее
       ///
       /// Locales: en, ru
@@ -430,6 +481,51 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("next", tableName: "Localizible", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Камера
+      ///
+      /// Locales: en, ru
+      static func camera(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("camera", tableName: "Localizible", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizible", preferredLanguages: preferredLanguages) else {
+          return "camera"
+        }
+
+        return NSLocalizedString("camera", tableName: "Localizible", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Отмена
+      ///
+      /// Locales: en, ru
+      static func cancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("cancel", tableName: "Localizible", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizible", preferredLanguages: preferredLanguages) else {
+          return "cancel"
+        }
+
+        return NSLocalizedString("cancel", tableName: "Localizible", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Очистить
+      ///
+      /// Locales: en, ru
+      static func remove(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("remove", tableName: "Localizible", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizible", preferredLanguages: preferredLanguages) else {
+          return "remove"
+        }
+
+        return NSLocalizedString("remove", tableName: "Localizible", bundle: bundle, comment: "")
       }
 
       /// en translation: Повторите пароль

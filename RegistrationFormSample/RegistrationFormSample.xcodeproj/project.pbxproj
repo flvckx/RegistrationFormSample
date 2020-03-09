@@ -50,6 +50,9 @@
 		C67A41DD2415170800A40FA6 /* VerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41DC2415170800A40FA6 /* VerificationViewModel.swift */; };
 		C67A41DF241517AE00A40FA6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41DE241517AE00A40FA6 /* User.swift */; };
 		C67A41E124151C8100A40FA6 /* VerificationSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41E024151C8100A40FA6 /* VerificationSceneFactory.swift */; };
+		C67A41E324152B9A00A40FA6 /* BorderedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41E224152B9A00A40FA6 /* BorderedTextView.swift */; };
+		C67A41E524152FAC00A40FA6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41E424152FAC00A40FA6 /* Constants.swift */; };
+		C67A41E724165E6B00A40FA6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41E624165E6B00A40FA6 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +103,9 @@
 		C67A41DC2415170800A40FA6 /* VerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewModel.swift; sourceTree = "<group>"; };
 		C67A41DE241517AE00A40FA6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C67A41E024151C8100A40FA6 /* VerificationSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationSceneFactory.swift; sourceTree = "<group>"; };
+		C67A41E224152B9A00A40FA6 /* BorderedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextView.swift; sourceTree = "<group>"; };
+		C67A41E424152FAC00A40FA6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C67A41E624165E6B00A40FA6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		DC1B21AA0E959B89369DF7D9 /* Pods-RegistrationFormSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegistrationFormSample.release.xcconfig"; path = "Target Support Files/Pods-RegistrationFormSample/Pods-RegistrationFormSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -278,6 +284,7 @@
 		C67A41952413D27A00A40FA6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C67A41E224152B9A00A40FA6 /* BorderedTextView.swift */,
 				C67A41B52414095A00A40FA6 /* Selection View */,
 				C67A41962413D2AD00A40FA6 /* Text Fields */,
 			);
@@ -353,6 +360,8 @@
 			children = (
 				C67A41C02414374200A40FA6 /* Validator.swift */,
 				C67A41D12414F20B00A40FA6 /* KeyboardSupportController.swift */,
+				C67A41E424152FAC00A40FA6 /* Constants.swift */,
+				C67A41E624165E6B00A40FA6 /* ImagePicker.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -562,6 +571,7 @@
 				C67A41DF241517AE00A40FA6 /* User.swift in Sources */,
 				C67A41A32413DC9600A40FA6 /* UnderlinedTextField.swift in Sources */,
 				C67A41BC24142F6800A40FA6 /* City.swift in Sources */,
+				C67A41E324152B9A00A40FA6 /* BorderedTextView.swift in Sources */,
 				C67A41732413977500A40FA6 /* Routeable.swift in Sources */,
 				C67A41DD2415170800A40FA6 /* VerificationViewModel.swift in Sources */,
 				C67A41A92413E1CB00A40FA6 /* SignUpSceneFactory.swift in Sources */,
@@ -574,10 +584,12 @@
 				C67A41AB2413E1F400A40FA6 /* SceneFactory.swift in Sources */,
 				C67A41DB2415155B00A40FA6 /* VerificationView.swift in Sources */,
 				C67A41D7241504D700A40FA6 /* UIViewController+StatusBar.swift in Sources */,
+				C67A41E724165E6B00A40FA6 /* ImagePicker.swift in Sources */,
 				C67A4159241393EC00A40FA6 /* AppDelegate.swift in Sources */,
 				C67A418224139CBF00A40FA6 /* OnboardingCoordinator.swift in Sources */,
 				C67A417724139AC700A40FA6 /* IAppServices.swift in Sources */,
 				C67A41C12414374200A40FA6 /* Validator.swift in Sources */,
+				C67A41E524152FAC00A40FA6 /* Constants.swift in Sources */,
 				C67A41CE24144A6D00A40FA6 /* PhoneTextField.swift in Sources */,
 				C67A41A72413DE7A00A40FA6 /* OnboardingViewModel.swift in Sources */,
 				C67A41752413992200A40FA6 /* Presentable.swift in Sources */,

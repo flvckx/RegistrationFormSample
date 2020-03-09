@@ -25,6 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window?.makeKeyAndVisible()
 
+        UINavigationBar.appearance().backIndicatorImage = R.image.backButton()
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = R.image.backButton()
+
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -1000.0, vertical: 0.0), for: .default)
+
+        UINavigationBar.appearance().tintColor = .white
+
         return true
     }
 }

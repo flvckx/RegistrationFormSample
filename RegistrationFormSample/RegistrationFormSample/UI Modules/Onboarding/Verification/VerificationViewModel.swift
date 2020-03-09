@@ -6,8 +6,10 @@
 //  Copyright © 2020 Serhii Palash. All rights reserved.
 //
 
-protocol IVerificationViewModel {
+import UIKit
 
+protocol IVerificationViewModel: VerificationViewModelOutput {
+    func openPicker(source: UIView)
 }
 
 protocol VerificationViewModelOutput {
@@ -17,9 +19,16 @@ protocol VerificationViewModelOutput {
 class VerificationViewModel: IVerificationViewModel {
 
     private var user: User
+    private let imagePicker: ImagePicker
 
-    init(user: User) {
+    var onPhotoTouch: ((UIView) -> Void)?
+
+    init(user: User, imagePicker: ImagePicker) {
         self.user = user
+        self.imagePicker = imagePicker
     }
-    
+
+    func openPicker(source: UIView) {
+        imagePicker.present(from: source)
+    }
 }
