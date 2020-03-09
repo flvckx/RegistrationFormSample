@@ -13,14 +13,16 @@ struct User {
     let surname: String
     let email: String
     let phone: String
+    var city: String
     var photo: UIImage?
     var bio: String?
 
-    init(name: String, surname: String, email: String, phone: String, photo: UIImage? = nil, bio: String? = nil) {
+    init(name: String, surname: String, email: String, phone: String, city: String, photo: UIImage? = nil, bio: String? = nil) {
         self.name = name
         self.surname = surname
         self.email = email
         self.phone = phone
+        self.city = city
         self.photo = photo
         self.bio = bio
     }

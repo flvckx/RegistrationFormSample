@@ -89,12 +89,14 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Onboarding`.
     static let onboarding = _R.storyboard.onboarding()
+    /// Storyboard `Profile`.
+    static let profile = _R.storyboard.profile()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
@@ -107,6 +109,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Onboarding", bundle: ...)`
     static func onboarding(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.onboarding)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Profile", bundle: ...)`
+    static func profile(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.profile)
     }
     #endif
 
@@ -748,6 +757,9 @@ struct _R: Rswift.Validatable {
       #if os(iOS) || os(tvOS)
       try onboarding.validate()
       #endif
+      #if os(iOS) || os(tvOS)
+      try profile.validate()
+      #endif
     }
 
     #if os(iOS) || os(tvOS)
@@ -786,6 +798,26 @@ struct _R: Rswift.Validatable {
         }
         if _R.storyboard.onboarding().verificationForm() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'verificationForm' could not be loaded from storyboard 'Onboarding' as 'VerificationView'.") }
         if _R.storyboard.onboarding().registrationForm() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'registrationForm' could not be loaded from storyboard 'Onboarding' as 'OnboardingView'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct profile: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "Profile"
+      let profileView = StoryboardViewControllerResource<ProfileView>(identifier: "ProfileView")
+
+      func profileView(_: Void = ()) -> ProfileView? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: profileView)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.profile().profileView() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'profileView' could not be loaded from storyboard 'Profile' as 'ProfileView'.") }
       }
 
       fileprivate init() {}

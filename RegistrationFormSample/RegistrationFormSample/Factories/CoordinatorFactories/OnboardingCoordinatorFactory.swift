@@ -6,8 +6,6 @@
 //  Copyright © 2020 Serhii Palash. All rights reserved.
 //
 
-import Foundation
-
 class OnboardingCoordinatorFactory: ICoordinatorFactory {
     func create(router: Routable, services: IAppServices) -> Coordinatable & CoordinatorFinishable {
         return OnboardingCoordinator(router: router, applicationServices: services)

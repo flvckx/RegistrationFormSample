@@ -6,8 +6,6 @@
 //  Copyright © 2020 Serhii Palash. All rights reserved.
 //
 
-import Foundation
-
 final class SignupSceneFactory: SceneFactory {
 
     typealias Scene = (view: Presentable, viewModel: OnboardingViewModelOutput)

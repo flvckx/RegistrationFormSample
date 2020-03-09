@@ -66,7 +66,8 @@ final class OnboardingView: KeyboardSupportController {
             name: nameTextFieldView.text ?? "",
             surname: surnameTextFieldView.text ?? "",
             email: emailTextFieldView.text ?? "",
-            phone: phoneTextFieldView.text ?? ""
+            phone: phoneTextFieldView.text ?? "",
+            city: selectionView.textValue ?? ""
         )
         viewModel.onNextTouch?(user)
     }

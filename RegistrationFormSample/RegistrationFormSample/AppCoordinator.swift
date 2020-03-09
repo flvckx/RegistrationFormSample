@@ -14,18 +14,21 @@ final class AppCoordinator: Coordinatable {
     private let window: UIWindow
     private var router: Router
     private var services: IAppServices
+    private var user: User?
 
     // MARK: - Flow coordinator variables
 
     var currentFlow: FlowConfigurations = .auth
 
     enum FlowConfigurations: ICoordinatorConfiguration {
-        case auth
+        case auth, profile
 
         var factory: ICoordinatorFactory {
             switch self {
             case .auth:
                 return OnboardingCoordinatorFactory()
+            case .profile:
+                return ProfileCoordinatorFactory()
             }
         }
     }
@@ -43,12 +46,16 @@ final class AppCoordinator: Coordinatable {
     }
 
     func start() {
-//        loadAuthorization()
         changeFlow(currentFlow, finishCallBack: handleFlowCallback(_:))
     }
 
     private func handleFlowCallback(_ flow: FlowConfigurations) {
-        // Change flow logic
+        switch flow {
+        case .auth:
+            changeFlow(.profile, finishCallBack: handleFlowCallback(_:))
+        case .profile:
+            break
+        }
     }
 
     private func changeFlow(_ flow: FlowConfigurations, finishCallBack: @escaping (FlowConfigurations) -> Void) {
@@ -56,8 +63,16 @@ final class AppCoordinator: Coordinatable {
 
         let factory = flow.factory
         var coordinator = factory.create(router: router, services: services)
-        coordinator.finishFlow = { _ in
+        coordinator.finishFlow = { some in
+            if let user = some as? User {
+                self.user = user
+            }
+
             finishCallBack(flow)
+        }
+
+        if let coordinator = coordinator as? ProfileCoordinator {
+            coordinator.user = user
         }
 
         DispatchQueue.main.async {
@@ -75,6 +90,8 @@ final class AppCoordinator: Coordinatable {
             navigationAppereance.barTintColor = R.color.baseGreen()
             navigationAppereance.titleTextAttributes = [.foregroundColor: UIColor.white]
             navigationAppereance.isTranslucent = false
+        case .profile:
+            break
         }
     }
 }
