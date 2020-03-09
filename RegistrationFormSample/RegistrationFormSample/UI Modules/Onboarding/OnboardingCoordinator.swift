@@ -27,7 +27,8 @@ final class OnboardingCoordinator: Coordinatable & CoordinatorFinishable {
     }
 
     func start() {
-        showRegistrationForm()
+//        showRegistrationForm()
+        showVerificationView(user: User(name: "", surname: "", email: "", phone: ""))
     }
 
     private func showRegistrationForm() {
@@ -47,7 +48,8 @@ final class OnboardingCoordinator: Coordinatable & CoordinatorFinishable {
     private func showVerificationView(user: User) {
         let scene = verificationSceneFactory.scene(user: user, services: applicationServices)
 
-        router.push(scene.view, animated: true)
+//        router.push(scene.view, animated: true)
+        router.setRootModule(scene.view)
     }
 
     private func presentSelectionModeAlert(on view: Presentable) {

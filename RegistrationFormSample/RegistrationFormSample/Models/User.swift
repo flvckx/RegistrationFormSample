@@ -6,15 +6,17 @@
 //  Copyright © 2020 Serhii Palash. All rights reserved.
 //
 
+import UIKit
+
 struct User {
     let name: String
     let surname: String
     let email: String
     let phone: String
-    let photo: String?
-    let bio: String?
+    var photo: UIImage?
+    var bio: String?
 
-    init(name: String, surname: String, email: String, phone: String, photo: String? = nil, bio: String? = nil) {
+    init(name: String, surname: String, email: String, phone: String, photo: UIImage? = nil, bio: String? = nil) {
         self.name = name
         self.surname = surname
         self.email = email

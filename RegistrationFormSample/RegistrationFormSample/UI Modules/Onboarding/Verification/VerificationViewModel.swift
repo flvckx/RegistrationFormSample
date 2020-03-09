@@ -10,10 +10,12 @@ import UIKit
 
 protocol IVerificationViewModel: VerificationViewModelOutput {
     func openPicker(source: UIView)
+    func saveAndFinish(image: UIImage?, bio: String?)
+    func finishFlow()
 }
 
 protocol VerificationViewModelOutput {
-    
+    var onFinishFlow: ((User) -> Void)? { get set }
 }
 
 class VerificationViewModel: IVerificationViewModel {
@@ -22,6 +24,7 @@ class VerificationViewModel: IVerificationViewModel {
     private let imagePicker: ImagePicker
 
     var onPhotoTouch: ((UIView) -> Void)?
+    var onFinishFlow: ((User) -> Void)?
 
     init(user: User, imagePicker: ImagePicker) {
         self.user = user
@@ -30,5 +33,16 @@ class VerificationViewModel: IVerificationViewModel {
 
     func openPicker(source: UIView) {
         imagePicker.present(from: source)
+    }
+
+    func saveAndFinish(image: UIImage?, bio: String?) {
+        user.bio = bio
+        user.photo = image
+
+        onFinishFlow?(user)
+    }
+
+    func finishFlow() {
+        onFinishFlow?(user)
     }
 }

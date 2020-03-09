@@ -33,7 +33,7 @@ class VerificationView: KeyboardSupportController {
 extension VerificationView: UITextViewDelegate {
 
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == .lightGray {
+        if textView.textColor == R.color.lightGray() {
             textView.text = nil
             textView.textColor = .black
         }
@@ -63,12 +63,18 @@ private extension VerificationView {
     func setUpView() {
         title = R.string.localizible.verification()
 
+        setCorneredNavigationBar()
+
         setProfileImageView()
         setUpTextView()
+        setUpButtons()
+
         separatorView.backgroundColor = R.color.darkGray()
 
         imageViewSublabel.text = R.string.localizible.chooseYourProfilePhoto()
         textViewTitleLabel.text = R.string.localizible.tellAboutYourself()
+
+        bioTextView.delegate = self
     }
 
     func setProfileImageView() {
@@ -85,7 +91,31 @@ private extension VerificationView {
         bioTextView.placeholder = R.string.localizible.enterTextLessThan(Constants.bioMaxLength)
     }
 
+    func setUpButtons() {
+        skipButton.layer.borderWidth = 1
+        skipButton.layer.borderColor = R.color.baseGreen()?.cgColor
+        skipButton.layer.cornerRadius = 6
+        skipButton.addTarget(self, action: #selector(skipButtonTouched), for: .touchUpInside)
+        skipButton.setTitleColor(R.color.darkGray(), for: .normal)
+        skipButton.setTitle(R.string.localizible.skip(), for: .normal)
+
+        saveButton.layer.cornerRadius = 6
+        saveButton.backgroundColor = R.color.baseGreen()
+        saveButton.addTarget(self, action: #selector(saveButtonTouched), for: .touchUpInside)
+        saveButton.setTitleColor(.white, for: .normal)
+        saveButton.setTitle(R.string.localizible.save(), for: .normal)
+
+    }
+
     @objc func loadPhoto() {
         viewModel.openPicker(source: profileImageView)
+    }
+
+    @objc func skipButtonTouched() {
+        viewModel.finishFlow()
+    }
+
+    @objc func saveButtonTouched() {
+        viewModel.saveAndFinish(image: profileImageView.image, bio: bioTextView.text)
     }
 }

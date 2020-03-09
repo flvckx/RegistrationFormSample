@@ -170,7 +170,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qf7-s7-8yS" customClass="BorderedTextView" customModule="RegistrationFormSample" customModuleProvider="target">
-                                <rect key="frame" x="20" y="372.5" width="374" height="334.5"/>
+                                <rect key="frame" x="20" y="372.5" width="374" height="339.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="250" constant="128" id="xhk-wU-QOI"/>
@@ -181,16 +181,16 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rd1-rg-G2z">
-                                <rect key="frame" x="20" y="757" width="179.5" height="55"/>
+                                <rect key="frame" x="20" y="762" width="179.5" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="FmQ-N6-7k6"/>
+                                    <constraint firstAttribute="height" constant="50" id="FmQ-N6-7k6"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2Y-nz-ExQ">
-                                <rect key="frame" x="214.5" y="757" width="179.5" height="55"/>
+                                <rect key="frame" x="214.5" y="762" width="179.5" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="uKa-45-Yb8"/>
+                                    <constraint firstAttribute="height" constant="50" id="uKa-45-Yb8"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                             </button>

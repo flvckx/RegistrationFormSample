@@ -99,7 +99,6 @@ extension OnboardingView: UIPickerViewDelegate {
 private extension OnboardingView {
 
     func setUpView() {
-        setStatusBarColor(R.color.baseGreen())
         setUpNavBar()
         setUpTextFields()
 
@@ -115,10 +114,7 @@ private extension OnboardingView {
 
     func setUpNavBar() {
         title = R.string.localizible.registration()
-
-        navigationController?.navigationBar.layer.cornerRadius = 10
-        navigationController?.navigationBar.clipsToBounds = true
-        navigationController?.navigationBar.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        setCorneredNavigationBar()
     }
 
     func setUpTextFields() {

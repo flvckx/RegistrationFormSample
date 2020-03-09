@@ -53,6 +53,7 @@
 		C67A41E324152B9A00A40FA6 /* BorderedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41E224152B9A00A40FA6 /* BorderedTextView.swift */; };
 		C67A41E524152FAC00A40FA6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41E424152FAC00A40FA6 /* Constants.swift */; };
 		C67A41E724165E6B00A40FA6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41E624165E6B00A40FA6 /* ImagePicker.swift */; };
+		C67A41E924166F6500A40FA6 /* UIVIewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41E824166F6500A40FA6 /* UIVIewController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		C67A41E224152B9A00A40FA6 /* BorderedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextView.swift; sourceTree = "<group>"; };
 		C67A41E424152FAC00A40FA6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C67A41E624165E6B00A40FA6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		C67A41E824166F6500A40FA6 /* UIVIewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIewController+.swift"; sourceTree = "<group>"; };
 		DC1B21AA0E959B89369DF7D9 /* Pods-RegistrationFormSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegistrationFormSample.release.xcconfig"; path = "Target Support Files/Pods-RegistrationFormSample/Pods-RegistrationFormSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -378,6 +380,7 @@
 		C67A41D5241504BF00A40FA6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C67A41E824166F6500A40FA6 /* UIVIewController+.swift */,
 				C67A41D6241504D700A40FA6 /* UIViewController+StatusBar.swift */,
 			);
 			path = Extensions;
@@ -585,6 +588,7 @@
 				C67A41DB2415155B00A40FA6 /* VerificationView.swift in Sources */,
 				C67A41D7241504D700A40FA6 /* UIViewController+StatusBar.swift in Sources */,
 				C67A41E724165E6B00A40FA6 /* ImagePicker.swift in Sources */,
+				C67A41E924166F6500A40FA6 /* UIVIewController+.swift in Sources */,
 				C67A4159241393EC00A40FA6 /* AppDelegate.swift in Sources */,
 				C67A418224139CBF00A40FA6 /* OnboardingCoordinator.swift in Sources */,
 				C67A417724139AC700A40FA6 /* IAppServices.swift in Sources */,
