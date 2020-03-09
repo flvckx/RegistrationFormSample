@@ -54,6 +54,12 @@
 		C67A41E524152FAC00A40FA6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41E424152FAC00A40FA6 /* Constants.swift */; };
 		C67A41E724165E6B00A40FA6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41E624165E6B00A40FA6 /* ImagePicker.swift */; };
 		C67A41E924166F6500A40FA6 /* UIVIewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41E824166F6500A40FA6 /* UIVIewController+.swift */; };
+		C67A41EB241675BA00A40FA6 /* ProfileCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41EA241675BA00A40FA6 /* ProfileCoordinatorFactory.swift */; };
+		C67A41EF2416760200A40FA6 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41EE2416760200A40FA6 /* ProfileCoordinator.swift */; };
+		C67A41F12416779A00A40FA6 /* ProfileSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41F02416779A00A40FA6 /* ProfileSceneFactory.swift */; };
+		C67A41F32416784100A40FA6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41F22416784100A40FA6 /* ProfileView.swift */; };
+		C67A41F52416787900A40FA6 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A41F42416787900A40FA6 /* ProfileViewModel.swift */; };
+		C67A41F7241678F200A40FA6 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C67A41F6241678F200A40FA6 /* Profile.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +114,12 @@
 		C67A41E424152FAC00A40FA6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C67A41E624165E6B00A40FA6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		C67A41E824166F6500A40FA6 /* UIVIewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIewController+.swift"; sourceTree = "<group>"; };
+		C67A41EA241675BA00A40FA6 /* ProfileCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinatorFactory.swift; sourceTree = "<group>"; };
+		C67A41EE2416760200A40FA6 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		C67A41F02416779A00A40FA6 /* ProfileSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSceneFactory.swift; sourceTree = "<group>"; };
+		C67A41F22416784100A40FA6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C67A41F42416787900A40FA6 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		C67A41F6241678F200A40FA6 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		DC1B21AA0E959B89369DF7D9 /* Pods-RegistrationFormSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegistrationFormSample.release.xcconfig"; path = "Target Support Files/Pods-RegistrationFormSample/Pods-RegistrationFormSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,6 +202,7 @@
 			children = (
 				C67A41A82413E1CB00A40FA6 /* SignUpSceneFactory.swift */,
 				C67A41E024151C8100A40FA6 /* VerificationSceneFactory.swift */,
+				C67A41F02416779A00A40FA6 /* ProfileSceneFactory.swift */,
 			);
 			path = SceneFactories;
 			sourceTree = "<group>";
@@ -198,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				C67A417924139B9D00A40FA6 /* OnboardingCoordinatorFactory.swift */,
+				C67A41EA241675BA00A40FA6 /* ProfileCoordinatorFactory.swift */,
 			);
 			path = CoordinatorFactories;
 			sourceTree = "<group>";
@@ -232,6 +246,7 @@
 			children = (
 				C67A418824139FA800A40FA6 /* Navigation */,
 				C67A418024139CAC00A40FA6 /* Onboarding */,
+				C67A41ED241675E700A40FA6 /* Profile */,
 			);
 			path = "UI Modules";
 			sourceTree = "<group>";
@@ -404,6 +419,17 @@
 			path = Verification;
 			sourceTree = "<group>";
 		};
+		C67A41ED241675E700A40FA6 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C67A41F22416784100A40FA6 /* ProfileView.swift */,
+				C67A41F42416787900A40FA6 /* ProfileViewModel.swift */,
+				C67A41F6241678F200A40FA6 /* Profile.storyboard */,
+				C67A41EE2416760200A40FA6 /* ProfileCoordinator.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -469,6 +495,7 @@
 			files = (
 				C67A41982413D2D700A40FA6 /* UnderlinedTextField.xib in Resources */,
 				C67A419E2413D63500A40FA6 /* Localizible.strings in Resources */,
+				C67A41F7241678F200A40FA6 /* Profile.storyboard in Resources */,
 				C67A419B2413D51000A40FA6 /* Colors.xcassets in Resources */,
 				C67A41B72414098500A40FA6 /* SelectionView.xib in Resources */,
 				C67A41AD2413E34600A40FA6 /* Onboarding.storyboard in Resources */,
@@ -572,6 +599,7 @@
 				C67A41932413A79400A40FA6 /* R.generated.swift in Sources */,
 				C67A41D02414E8E400A40FA6 /* TextContainable.swift in Sources */,
 				C67A41DF241517AE00A40FA6 /* User.swift in Sources */,
+				C67A41F52416787900A40FA6 /* ProfileViewModel.swift in Sources */,
 				C67A41A32413DC9600A40FA6 /* UnderlinedTextField.swift in Sources */,
 				C67A41BC24142F6800A40FA6 /* City.swift in Sources */,
 				C67A41E324152B9A00A40FA6 /* BorderedTextView.swift in Sources */,
@@ -579,11 +607,14 @@
 				C67A41DD2415170800A40FA6 /* VerificationViewModel.swift in Sources */,
 				C67A41A92413E1CB00A40FA6 /* SignUpSceneFactory.swift in Sources */,
 				C67A418E2413A40600A40FA6 /* Services.swift in Sources */,
+				C67A41F32416784100A40FA6 /* ProfileView.swift in Sources */,
 				C67A41712413973B00A40FA6 /* ICoordinatorFactory.swift in Sources */,
 				C67A41C324143A2900A40FA6 /* TextFieldContent.swift in Sources */,
+				C67A41EB241675BA00A40FA6 /* ProfileCoordinatorFactory.swift in Sources */,
 				C67A418524139E1900A40FA6 /* CitiesNetworkService.swift in Sources */,
 				C67A418A24139FB900A40FA6 /* Router.swift in Sources */,
 				C67A417A24139B9D00A40FA6 /* OnboardingCoordinatorFactory.swift in Sources */,
+				C67A41F12416779A00A40FA6 /* ProfileSceneFactory.swift in Sources */,
 				C67A41AB2413E1F400A40FA6 /* SceneFactory.swift in Sources */,
 				C67A41DB2415155B00A40FA6 /* VerificationView.swift in Sources */,
 				C67A41D7241504D700A40FA6 /* UIViewController+StatusBar.swift in Sources */,
@@ -599,6 +630,7 @@
 				C67A41752413992200A40FA6 /* Presentable.swift in Sources */,
 				C67A417C24139BD500A40FA6 /* Coordinatable.swift in Sources */,
 				C67A41D22414F20B00A40FA6 /* KeyboardSupportController.swift in Sources */,
+				C67A41EF2416760200A40FA6 /* ProfileCoordinator.swift in Sources */,
 				C67A41B4241401C700A40FA6 /* SecureTextField.swift in Sources */,
 				C67A41A52413DE5A00A40FA6 /* OnboardingView.swift in Sources */,
 				C67A417E24139C0700A40FA6 /* CoordinatorFinishable.swift in Sources */,
