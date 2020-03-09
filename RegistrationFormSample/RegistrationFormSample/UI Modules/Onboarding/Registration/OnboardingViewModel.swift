@@ -13,6 +13,7 @@ protocol IOnboardingViewModel: OnboardingViewModelOutput {
 protocol OnboardingViewModelOutput {
     var onNextTouch: ((User) -> Void)? { get set }
     var selectionAction: (() -> Void)? { get set }
+    var onSelectCity: (() -> Void)? { get set }
 }
 
 final class OnboardingViewModel: IOnboardingViewModel {
@@ -23,6 +24,7 @@ final class OnboardingViewModel: IOnboardingViewModel {
 
     var selectionAction: (() -> Void)?
     var onNextTouch: ((User) -> Void)?
+    var onSelectCity: (() -> Void)?
 
     init(citiesNetworkService: ICitiesNetworkService) {
         self.citiesNetworkService = citiesNetworkService

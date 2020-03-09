@@ -28,7 +28,6 @@ final class OnboardingCoordinator: Coordinatable & CoordinatorFinishable {
 
     func start() {
         showRegistrationForm()
-//        showVerificationView(user: User(name: "", surname: "", email: "", phone: "", city: ""))
     }
 
     private func showRegistrationForm() {
@@ -42,6 +41,10 @@ final class OnboardingCoordinator: Coordinatable & CoordinatorFinishable {
             self.showVerificationView(user: user)
         }
 
+        scene.viewModel.onSelectCity = {
+            self.router.popModule(animated: true)
+        }
+
         router.setRootModule(scene.view)
     }
 
@@ -53,12 +56,17 @@ final class OnboardingCoordinator: Coordinatable & CoordinatorFinishable {
         }
         
         router.push(scene.view, animated: true)
-//        router.setRootModule(scene.view)
     }
 
     private func presentSelectionModeAlert(on view: Presentable) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let tableAction = UIAlertAction(title: UITableView.description(), style: .default, handler: { _ in })
+
+        let tableAction = UIAlertAction(
+            title: UITableView.description(),
+            style: .default,
+            handler: { [weak self] _ in self?.showTableView(from: view) }
+        )
+
         let pickerAction = UIAlertAction(
             title: UIPickerView.description(),
             style: .default,
@@ -69,6 +77,16 @@ final class OnboardingCoordinator: Coordinatable & CoordinatorFinishable {
         alert.addAction(pickerAction)
 
         view.toPresent?.present(alert, animated: true)
+    }
+
+    private func showTableView(from view: Presentable) {
+        guard let viewController = view.toPresent as? OnboardingView else { return }
+        let tableViewController = UITableViewController()
+        
+        tableViewController.tableView.dataSource = viewController
+        tableViewController.tableView.delegate = viewController
+
+        router.push(tableViewController, animated: true)
     }
 
     private func presentActionSheetWithPicker(on view: Presentable) {

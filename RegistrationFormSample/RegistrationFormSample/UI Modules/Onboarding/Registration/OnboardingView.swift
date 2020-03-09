@@ -73,6 +73,31 @@ final class OnboardingView: KeyboardSupportController {
     }
 }
 
+// MARK: - UITableViewDataSource
+
+extension OnboardingView: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.cities.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = viewModel.cities[indexPath.row].title
+        return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension OnboardingView: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectCity(at: indexPath.row)
+        viewModel.onSelectCity?()
+    }
+}
+
 // MARK: - UIPickerViewDatasource
 
 extension OnboardingView: UIPickerViewDataSource {
